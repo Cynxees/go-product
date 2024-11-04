@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package go_product.service.v1;
+option go_package = "./pb";
+
+message DefaultResponse {
+  bool error = 1;
+  uint32 code = 2;
+  string message = 3;
+}
+
+message GetProductRequest {
+  string id = 1;
+}
+
+message GetProductResponse {
+  bool error = 1;
+  uint32 code = 2;
+  string message = 3;
+  uint64 id = 4;
+  string name = 5;
+  uint64 price = 6;
+  string description = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
+
+}
+
+message CreateProductRequest {
+  string name = 1;
+  int64 price = 2;
+  string description = 3;
+}
+
+message DeleteProductRequest {
+  string id = 1;
+}
+
+message UpdateProductRequest {
+  string id = 1;
+  string name = 2;
+  int64 price = 3;
+  string description = 4;
+}
+

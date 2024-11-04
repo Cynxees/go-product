@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package go_product.service.v1;
+option go_package = "./pb";
+
+import "proto/go_product_payload.proto";
+
+service ProductService {
+  rpc CreateProduct (CreateProductRequest) returns (DefaultResponse);
+  rpc GetProduct (GetProductRequest) returns (GetProductResponse);
+  rpc DeleteProduct (DeleteProductRequest) returns (DefaultResponse);
+  rpc UpdateProduct (UpdateProductRequest) returns (DefaultResponse);
+}
